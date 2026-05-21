@@ -19,7 +19,7 @@ function getUserInfo() {
     method: 'GET',
     url: '/my/userinfo',
     success: function (res) {
-      if (res.code!==0) return layer.msg('获取用户信息失败') 
+      if (res.code !== 0) return layer.msg('获取用户信息失败')
       renderAvatar(res.data)
     }
   })
@@ -27,7 +27,7 @@ function getUserInfo() {
 
 function renderAvatar(user) {
   // 获取用户名称
-  let name = user.username || user.nickname
+  let name = user.nickname || user.username
   // 设置欢迎文本
   $('#welcome').html('欢迎，' + name)
   // 渲染用户头像
